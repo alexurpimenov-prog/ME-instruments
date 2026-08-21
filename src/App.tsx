@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { SequencerCard } from './components/SequencerCard';
-import { HistoryCard } from './components/HistoryCard';
 import { ProcessFlow } from './components/ProcessFlow';
 import { TechnologyCard } from './components/TechnologyCard';
 import { DisclaimerCard } from './components/DisclaimerCard';
@@ -72,10 +71,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Historical Context & Scientific Foundation */}
-          <HistoryCard />
-
-          {/* Monochrome Sequencing Technology Highlight */}
+          {/* Unified Technology & Scientific Foundation Card */}
           <TechnologyCard />
 
           {/* Seamless Process Flow */}
