@@ -25,8 +25,8 @@ export const TechnologyCard: React.FC = () => {
         </p>
       </div>
 
-      {/* Logical Structured Grid of Advantages */}
-      <div className="unified-tech-grid">
+      {/* Logical Structured List of Advantages (One under another) */}
+      <div className="unified-tech-list">
         {/* 1. Scientific Heritage & Trust */}
         <div className="unified-tech-item">
           <div className="unified-tech-icon-wrapper">
@@ -40,20 +40,7 @@ export const TechnologyCard: React.FC = () => {
           </div>
         </div>
 
-        {/* 2. Innovative Monochrome Optics */}
-        <div className="unified-tech-item">
-          <div className="unified-tech-icon-wrapper">
-            <Sparkles className="w-5 h-5 text-[#0066cc]" />
-          </div>
-          <div className="unified-tech-item-content">
-            <h4 className="unified-tech-item-title">Инновационная монохромная оптика (1-Color SBS)</h4>
-            <p className="unified-tech-item-desc">
-              Считывание всех 4 оснований с помощью одного флуорофора позволило уйти от громоздкой системы лазеров и дихроичных зеркал, превратив секвенатор в эргономичный настольный прибор.
-            </p>
-          </div>
-        </div>
-
-        {/* 3. Reliability & Fault Tolerance */}
+        {/* 2. Merged: Reliability & Fault Tolerance (from Monochrome Optics to Mechanical Simplicity) */}
         <div className="unified-tech-item">
           <div className="unified-tech-icon-wrapper">
             <Cpu className="w-5 h-5 text-[#0066cc]" />
@@ -61,12 +48,12 @@ export const TechnologyCard: React.FC = () => {
           <div className="unified-tech-item-content">
             <h4 className="unified-tech-item-title">Максимальная надежность и отказоустойчивость</h4>
             <p className="unified-tech-item-desc">
-              Упрощение оптико-механического тракта снизило нагрев, повысило виброустойчивость прибора и свело к минимуму риски сервисных поломок даже при интенсивной клинической нагрузке.
+              Считывание всех четырех оснований с помощью всего одного флуорофора позволило уйти от громоздкой системы лазеров и дихроичных зеркал, превратив секвенатор в эргономичный настольный прибор. Радикальное упрощение оптико-механического тракта повысило устойчивость к внешним вибрациям, снизило себестоимость и свело к минимуму риск сервисных поломок даже при интенсивной клинической нагрузке.
             </p>
           </div>
         </div>
 
-        {/* 4. Cost Efficiency & Low Startup Threshold */}
+        {/* 3. Cost Efficiency & Low Startup Threshold */}
         <div className="unified-tech-item">
           <div className="unified-tech-icon-wrapper">
             <DollarSign className="w-5 h-5 text-[#0066cc]" />
@@ -79,7 +66,7 @@ export const TechnologyCard: React.FC = () => {
           </div>
         </div>
 
-        {/* 5. Speed (7 to 24 Hours) */}
+        {/* 4. Speed (7 to 24 Hours) */}
         <div className="unified-tech-item">
           <div className="unified-tech-icon-wrapper">
             <Zap className="w-5 h-5 text-[#0066cc]" />
@@ -92,7 +79,7 @@ export const TechnologyCard: React.FC = () => {
           </div>
         </div>
 
-        {/* 6. Technological Independence */}
+        {/* 5. Technological Independence */}
         <div className="unified-tech-item">
           <div className="unified-tech-icon-wrapper">
             <ShieldCheck className="w-5 h-5 text-[#0066cc]" />
