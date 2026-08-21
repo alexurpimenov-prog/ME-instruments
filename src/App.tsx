@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { SequencerCard } from './components/SequencerCard';
+import Calculator from './components/Calculator';
 import { ProcessFlow } from './components/ProcessFlow';
 import { TechnologyCard } from './components/TechnologyCard';
 import { DisclaimerCard } from './components/DisclaimerCard';
@@ -60,26 +61,28 @@ export default function App() {
           </p>
 
           {/* Grid with UniSeq100 and UniSeq2000 */}
-          <div className="sequencer-grid">
-            {SEQUENCERS.map((sequencer) => (
-              <SequencerCard
-                key={sequencer.id}
-                sequencer={sequencer}
-                overrideSrc={imageOverrides[sequencer.imageSrc]}
-                onImageUploaded={handleImageUploaded}
-              />
-            ))}
-          </div>
+<div className="sequencer-grid">
+  {SEQUENCERS.map((sequencer) => (
+    <SequencerCard
+      key={sequencer.id}
+      sequencer={sequencer}
+      overrideSrc={imageOverrides[sequencer.imageSrc]}
+      onImageUploaded={handleImageUploaded}
+    />
+  ))}
+</div>
 
-          {/* Unified Technology & Scientific Foundation Card */}
-          <TechnologyCard />
+<Calculator />
 
-          {/* Seamless Process Flow */}
-          <ProcessFlow
-            steps={PROCESS_STEPS}
-            imageOverrides={imageOverrides}
-            onImageUploaded={handleImageUploaded}
-          />
+{/* Unified Technology & Scientific Foundation Card */}
+<TechnologyCard />
+
+{/* Seamless Process Flow */}
+<ProcessFlow
+  steps={PROCESS_STEPS}
+  imageOverrides={imageOverrides}
+  onImageUploaded={handleImageUploaded}
+/>
 
           {/* Regulatory & RU Disclaimer */}
           <DisclaimerCard />
