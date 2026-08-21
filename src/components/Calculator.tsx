@@ -1,247 +1,128 @@
-import React, { useState, useEffect } from 'react';
+import { SequencerData, ProcessStepData } from './types';
 
-export default function Calculator() {
-  const [panelSize, setPanelSize] = useState<number>(100000);
-  const [depth, setDepth] = useState<number>(2000);
-  const [readType, setReadType] = useState<string>('PE150');
-  const [duplicates, setDuplicates] = useState<number>(20);
-  const [sequencer, setSequencer] = useState<string>('uniseq2000');
-  const [result, setResult] = useState<number | string>('—');
+import uniseq100Img from './assets/images/uniseq100.png';
+import uniseq2000Img from './assets/images/uniseq2000.png';
+import nucleicExtractionImg from './assets/images/nucleic_acid_extraction_system.png';
+import liquidHandlingImg from './assets/images/Liquid_Handing_Workstation.png';
+import pcrSystemImg from './assets/images/PCR_System.png';
+import qcImg from './assets/images/QC.png';
+import uniPreImg from './assets/images/UNIPre-1.jpg';
+import biImg from './assets/images/BI.png';
 
-  const getReadLength = (type: string): number => {
-    switch (type) {
-      case 'PE50': return 100;
-      case 'PE75': return 150;
-      case 'PE100': return 200;
-      case 'PE150': return 300;
-      case 'SE50': return 50;
-      case 'SE75': return 75;
-      case 'SE100': return 100;
-      case 'SE150': return 150;
-      default: return 300;
-    }
-  };
+export const SEQUENCERS: SequencerData[] = [
+  {
+    id: 'uniseq100',
+    name: 'UniSeq100',
+    imageSrc: uniseq100Img,
+    imageAlt: 'UniSeq100',
+    subtitle: 'Компактный секвенатор для лабораторий с малым и средним потоком образцов',
+    specs: [
+      { label: 'Производительность за запуск', value: '1 — 16 млрд нт (1 — 16 Gb)' },
+      { label: 'Количество прочтений', value: '5 — 50 млн ридов (M SE/PE)' },
+      { label: 'Длина прочтения', value: 'SE50, PE75, PE150, SE300, PE300' },
+      { label: 'Время запуска', value: 'от 5.5 до 34.5 часов' },
+      { label: 'Тип проточных ячеек', value: 'FCM (мини), FCL (стандарт)' },
+      { label: 'Качество данных', value: 'Q30 ≥ 85%' },
+    ],
+    highlights: [
+      'Максимальная гибкость и независимость от накопления образцов',
+      'Быстрые протоколы (SE50 за 5.5 ч)',
+      'Низкая стоимость входа в NGS-технологию',
+      'Широкий спектр длин прочтений до PE300',
+    ],
+    suitableFor: [
+      'Малых и средних потоков (до 20–30 образцов в неделю)',
+      'Срочных анализов и коротких таргетных панелей',
+      'Бактериального/вирусного секвенирования (WGS малых геномов)',
+      'Анализа 16S/18S рРНК и таргетного секвенирования',
+      'Начального этапа внедрения NGS в клиническую практику',
+    ],
+  },
+  {
+    id: 'uniseq2000',
+    name: 'UniSeq2000',
+    imageSrc: uniseq2000Img,
+    imageAlt: 'UniSeq2000',
+    subtitle: 'Высокопроизводительная платформа для широкого спектра клинических применений',
+    specs: [
+      { label: 'Производительность за запуск', value: '8 — 480 млрд нт (8 — 480 Gb)' },
+      { label: 'Количество прочтений', value: '55 — 1600 млн ридов (M SE/PE)' },
+      { label: 'Длина прочтения', value: 'SE50, PE75, PE100, PE150, PE300' },
+      { label: 'Время запуска', value: 'от 12 до 58 часов' },
+      { label: 'Тип проточных ячеек', value: 'FCS, FCN, FCM, FCL' },
+      { label: 'Качество данных', value: 'Q30 ≥ 85%' },
+    ],
+    highlights: [
+      'Масштабируемость: 4 типа проточных ячеек (FCS/FCN/FCM/FCL)',
+      'Две независимые ячейки — запуск разного типа ячеек одновременно',
+      'Минимальная себестоимость на один образец при высоком потоке',
+      'Производительность до 480 Gb за запуск',
+    ],
+    suitableFor: [
+      'Для лабораторий со средним и большим потоком образцов',
+      'Таргетного секвенирования',
+      'Запусков от 10 образцов на ячейку',
+      'Экономии бюджета и минимизации стоимости реагентов на запуск при среднем и большом потоке',
+      'Универсальности — таргетное NGS, метагеномика, патогены, NIPT, CNV-seq, PGS, онкология',
+    ],
+  },
+];
 
-  useEffect(() => {
-    const reads = sequencer === 'uniseq100' ? 10000000 : 160000000;
-    const effectiveReadLength = getReadLength(readType);
-
-    if (panelSize > 0 && depth > 0) {
-      const usefulReads = reads * (1 - duplicates / 100);
-      const requiredReadsPerSample = (panelSize * depth) / effectiveReadLength;
-      const calculatedSamples = Math.floor(usefulReads / requiredReadsPerSample);
-      setResult(calculatedSamples > 0 ? calculatedSamples : 0);
-    } else {
-      setResult('—');
-    }
-  }, [panelSize, depth, readType, duplicates, sequencer]);
-
-  return (
-    <div className="container" style={{ paddingLeft: 0, paddingRight: 0, maxWidth: '100%', width: '100%' }}>
-      <div style={{
-        marginTop: '40px',
-        marginBottom: '40px',
-        backgroundColor: '#ffffff',
-        borderRadius: '16px',
-        boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)',
-        border: '1px solid #f1f5f9',
-        padding: '32px',
-        width: '100%',
-        boxSizing: 'border-box',
-        fontFamily: 'sans-serif'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-          <span style={{ fontSize: '28px' }}>🧮</span>
-          <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b', margin: 0 }}>
-            Калькулятор количества образцов
-          </h3>
-        </div>
-        
-        <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '24px', lineHeight: '1.5', margin: '0 0 24px 0' }}>
-          Рассчитайте оптимальное количество образцов на один запуск с учётом ПЦР-дубликатов.
-        </p>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px' }}>
-          {/* Левая колонка: Ввод данных */}
-          <div style={{ flex: '1 1 450px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569', marginBottom: '8px' }}>
-                Платформа секвенирования
-              </label>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <button 
-                  type="button"
-                  onClick={() => setSequencer('uniseq100')}
-                  style={{
-                    flex: 1,
-                    padding: '10px 16px',
-                    borderRadius: '10px',
-                    fontSize: '13px',
-                    fontWeight: '500',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    backgroundColor: sequencer === 'uniseq100' ? '#0066cc' : '#f8fafc',
-                    color: sequencer === 'uniseq100' ? '#ffffff' : '#64748b',
-                    boxShadow: sequencer === 'uniseq100' ? '0 4px 6px -1px rgba(0, 102, 204, 0.2)' : 'none'
-                  }}
-                >
-                  UniSeq100 (10M чтений)
-                </button>
-                <button 
-                  type="button"
-                  onClick={() => setSequencer('uniseq2000')}
-                  style={{
-                    flex: 1,
-                    padding: '10px 16px',
-                    borderRadius: '10px',
-                    fontSize: '13px',
-                    fontWeight: '500',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    backgroundColor: sequencer === 'uniseq2000' ? '#0066cc' : '#f8fafc',
-                    color: sequencer === 'uniseq2000' ? '#ffffff' : '#64748b',
-                    boxShadow: sequencer === 'uniseq2000' ? '0 4px 6px -1px rgba(0, 102, 204, 0.2)' : 'none'
-                  }}
-                >
-                  UniSeq2000 (160M чтений)
-                </button>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ flex: '1 1 200px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569', marginBottom: '6px' }}>
-                  Размер панели (bp)
-                </label>
-                <input 
-                  type="number" 
-                  value={panelSize} 
-                  onChange={(e) => setPanelSize(Number(e.target.value))}
-                  style={{
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    padding: '10px 14px',
-                    borderRadius: '10px',
-                    border: '1px solid #cbd5e1',
-                    fontSize: '14px',
-                    color: '#334155',
-                    outline: 'none'
-                  }}
-                />
-              </div>
-
-              <div style={{ flex: '1 1 200px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569', marginBottom: '6px' }}>
-                  Глубина покрытия (×)
-                </label>
-                <input 
-                  type="number" 
-                  value={depth} 
-                  onChange={(e) => setDepth(Number(e.target.value))}
-                  style={{
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    padding: '10px 14px',
-                    borderRadius: '10px',
-                    border: '1px solid #cbd5e1',
-                    fontSize: '14px',
-                    color: '#334155',
-                    outline: 'none'
-                  }}
-                />
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ flex: '1 1 200px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569', marginBottom: '6px' }}>
-                  Длина чтения
-                </label>
-                <select 
-                  value={readType} 
-                  onChange={(e) => setReadType(e.target.value)}
-                  style={{
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    padding: '10px 14px',
-                    borderRadius: '10px',
-                    border: '1px solid #cbd5e1',
-                    backgroundColor: '#ffffff',
-                    fontSize: '14px',
-                    color: '#334155',
-                    outline: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  {['PE50', 'PE75', 'PE100', 'PE150', 'SE50', 'SE75', 'SE100', 'SE150'].map(t => (
-                    <option key={t} value={t}>{t}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div style={{ flex: '1 1 200px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569', marginBottom: '6px' }}>
-                  ПЦР-дубликаты (%)
-                </label>
-                <input 
-                  type="number" 
-                  value={duplicates} 
-                  onChange={(e) => setDuplicates(Number(e.target.value))}
-                  style={{
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    padding: '10px 14px',
-                    borderRadius: '10px',
-                    border: '1px solid #cbd5e1',
-                    fontSize: '14px',
-                    color: '#334155',
-                    outline: 'none'
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Правая колонка: Итоговый результат */}
-          <div style={{ 
-            flex: '1 1 300px', 
-            backgroundColor: '#f8fafc', 
-            borderRadius: '16px', 
-            padding: '24px', 
-            display: 'flex', 
-            flexDirection: 'column', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            border: '1px solid #f1f5f9',
-            textAlign: 'center'
-          }}>
-            <span style={{ fontSize: '11px', fontWeight: '700', color: '#94a3b8', marginBottom: '8px', textTransform: 'uppercase' }}>
-              Итоговая вместимость ячейки
-            </span>
-            <div style={{ fontSize: '56px', fontWeight: '900', color: '#0066cc', lineHeight: '1', margin: '12px 0' }}>
-              {result}
-            </div>
-            <span style={{ fontSize: '15px', fontWeight: '600', color: '#334155' }}>
-              образцов за один запуск
-            </span>
-            <div style={{ 
-              marginTop: '24px', 
-              paddingTop: '16px', 
-              borderTop: '1px solid #e2e8f0', 
-              width: '100%', 
-              textAlign: 'left', 
-              fontSize: '11px', 
-              color: '#64748b', 
-              lineHeight: '1.6' 
-            }}>
-              <strong style={{ color: '#475569', display: 'block', marginBottom: '4px' }}>Формула расчёта:</strong>
-              образцов = (чтения ячейки × (1 − дубликаты/100)) / ((размер панели в bp × глубина) / effectiveReadLength)
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+export const PROCESS_STEPS: ProcessStepData[] = [
+  {
+    number: 1,
+    icon: '🧪',
+    title: 'Система автоматического выделения',
+    description: 'ДНК/РНК',
+    imageSrc: nucleicExtractionImg,
+    imageAlt: 'Система выделения',
+  },
+  {
+    number: 2,
+    icon: '⚙️',
+    title: 'Система автоматического дозирования',
+    description: 'Роботизированная система с максимальным функционалом для NGS',
+    imageSrc: liquidHandlingImg,
+    imageAlt: 'Система дозирования',
+  },
+  {
+    number: 3,
+    icon: '📊',
+    title: 'Real-time ПЦР амплификаторы',
+    description: 'Амплификация библиотек',
+    imageSrc: pcrSystemImg,
+    imageAlt: 'ПЦР система',
+  },
+  {
+    number: 4,
+    icon: '🔬',
+    title: 'Системы детекции',
+    description: 'Флюориметры и др.',
+    imageSrc: qcImg,
+    imageAlt: 'Системы детекции',
+  },
+  {
+    number: 5,
+    icon: '🧬',
+    title: 'Автоматическая картриджная система приготовления библиотек',
+    description: 'Внесение ДНК в предзаполненные картриджи и получение готовой библиотеки на выходе',
+    imageSrc: uniPreImg,
+    imageAlt: 'Картриджная система',
+  },
+  {
+    number: 6,
+    icon: '🔭',
+    title: 'Секвенаторы',
+    description: 'UniSeq100 и UniSeq2000',
+    imageSrc: uniseq100Img,
+    imageAlt: 'Секвенаторы',
+  },
+  {
+    number: 7,
+    icon: '💻',
+    title: 'Биоинформатическая станция',
+    description: 'Готовые пайплайны, интеграция с биоинформатическими базами',
+    imageSrc: biImg,
+    imageAlt: 'Биоинформатическая станция',
+  },
+];
