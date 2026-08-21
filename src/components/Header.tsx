@@ -16,10 +16,10 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="container">
         <div className="logo-placeholder">
           <ImageSlot
-            src="images/Logo.png"
+            src="images/Logo2.png"
             alt="ME Instruments Logo"
             className="w-full h-full"
-            overrideSrc={imageOverrides['images/Logo.png']}
+            overrideSrc={imageOverrides['images/Logo2.png']}
             onImageUploaded={onImageUploaded}
           />
         </div>
