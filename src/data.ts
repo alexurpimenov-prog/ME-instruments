@@ -4,7 +4,7 @@ export const SEQUENCERS: SequencerData[] = [
   {
     id: 'uniseq100',
     name: 'UniSeq100',
-    imageSrc: 'images/uniseq100.png',
+    imageSrc: './assets/images/uniseq100.png',
     imageAlt: 'UniSeq100',
     subtitle: 'Компактный секвенатор для лабораторий с малым и средним потоком образцов',
     specs: [
