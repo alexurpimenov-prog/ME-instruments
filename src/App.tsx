@@ -72,10 +72,10 @@ export default function App() {
   ))}
 </div>
 
-<Calculator />
-
 {/* Unified Technology & Scientific Foundation Card */}
 <TechnologyCard />
+
+<Calculator />
 
 {/* Seamless Process Flow */}
 <ProcessFlow
