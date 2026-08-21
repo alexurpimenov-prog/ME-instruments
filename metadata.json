@@ -1,0 +1,6 @@
+{
+  "name": "ME Instruments - Секвенаторы UniSeq",
+  "description": "Секвенаторы UniSeq и комплексные решения ME Instruments от эксклюзивного дистрибьютора БиоЛайн",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
