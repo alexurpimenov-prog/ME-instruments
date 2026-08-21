@@ -37,7 +37,7 @@ export default function Calculator() {
   }, [panelSize, depth, readType, duplicates, sequencer]);
 
   return (
-    <div className="container" style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <div className="container" style={{ paddingLeft: 0, paddingRight: 0, maxWidth: '100%', width: '100%' }}>
       <div style={{
         marginTop: '40px',
         marginBottom: '40px',
@@ -237,8 +237,11 @@ export default function Calculator() {
               lineHeight: '1.6' 
             }}>
               <strong style={{ color: '#475569', display: 'block', marginBottom: '4px' }}>Формула расчёта:</strong>
-              образцов = (чтения ячейки × (1 − дубликаты/100)) / ((размер панели в bp × глубина) / эффективная длина чтения)
+              образцов = (чтения ячейки × (1 − дубликаты/100)) / ((размер панели в bp × глубина) / effectiveReadLength)
             </div>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
