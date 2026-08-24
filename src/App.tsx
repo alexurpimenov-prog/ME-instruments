@@ -4,7 +4,7 @@ import { SequencerCard } from './components/SequencerCard';
 import Calculator from './components/Calculator';
 import { ProcessFlow } from './components/ProcessFlow';
 import { TechnologyCard } from './components/TechnologyCard';
-import { ButtonCard } from './components/ButtonCard_theory_1';
+import  ButtonCard  from './components/ButtonCard_theory_1';
 import { DisclaimerCard } from './components/DisclaimerCard';
 import { ImageManagerModal } from './components/ImageManagerModal';
 import { SEQUENCERS, PROCESS_STEPS } from './data';
