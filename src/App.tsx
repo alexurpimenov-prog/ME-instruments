@@ -4,6 +4,7 @@ import { SequencerCard } from './components/SequencerCard';
 import Calculator from './components/Calculator';
 import { ProcessFlow } from './components/ProcessFlow';
 import { TechnologyCard } from './components/TechnologyCard';
+import { ButtonCard } from './components/ButtonCard_theory_1';
 import { DisclaimerCard } from './components/DisclaimerCard';
 import { ImageManagerModal } from './components/ImageManagerModal';
 import { SEQUENCERS, PROCESS_STEPS } from './data';
@@ -61,28 +62,33 @@ export default function App() {
           </p>
 
           {/* Grid with UniSeq100 and UniSeq2000 */}
-<div className="sequencer-grid">
-  {SEQUENCERS.map((sequencer) => (
-    <SequencerCard
-      key={sequencer.id}
-      sequencer={sequencer}
-      overrideSrc={imageOverrides[sequencer.imageSrc]}
-      onImageUploaded={handleImageUploaded}
-    />
-  ))}
-</div>
+          <div className="sequencer-grid">
+            {SEQUENCERS.map((sequencer) => (
+              <SequencerCard
+                key={sequencer.id}
+                sequencer={sequencer}
+                overrideSrc={imageOverrides[sequencer.imageSrc]}
+                onImageUploaded={handleImageUploaded}
+              />
+            ))}
+          </div>
 
-{/* Unified Technology & Scientific Foundation Card */}
-<TechnologyCard />
+          {/* Unified Technology & Scientific Foundation Card */}
+          <TechnologyCard />
 
-<Calculator />
+          <Calculator />
 
-{/* Seamless Process Flow */}
-<ProcessFlow
-  steps={PROCESS_STEPS}
-  imageOverrides={imageOverrides}
-  onImageUploaded={handleImageUploaded}
-/>
+          {/* Сетка после калькулятора, содержащая только вашу новую кнопку */}
+          <div className="sequencer-grid">
+            <ButtonCard onClick={() => console.log('Клик!')} />
+          </div>
+
+          {/* Seamless Process Flow */}
+          <ProcessFlow
+            steps={PROCESS_STEPS}
+            imageOverrides={imageOverrides}
+            onImageUploaded={handleImageUploaded}
+          />
 
           {/* Regulatory & RU Disclaimer */}
           <DisclaimerCard />
