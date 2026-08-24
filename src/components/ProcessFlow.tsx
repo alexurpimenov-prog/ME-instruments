@@ -28,7 +28,20 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   return (
     <div className="process-wrapper" id="process-section">
       <h3>Интеграция с роботизированной платформой для подготовки библиотек ME Instruments</h3>
-      <p className="sub">Полный конвейер: от образца до готового отчёта</p>
+            {/* Картинка рабочей станции по центру */}
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0 3rem 0' }}>
+        <img 
+          src="images/Liquid_Handing_Workstation_v2.png" 
+          alt="Liquid Handling Workstation" 
+          style={{ 
+            maxWidth: '100%', 
+            height: 'auto', 
+            borderRadius: '12px', 
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)' 
+          }} 
+        />
+      </div>
+
 
       {/* Раздел 1: Ключевые преимущества */}
       <div className="unified-tech-card" style={{ marginBottom: '3rem', boxShadow: 'none', padding: '24px 0' }}>
