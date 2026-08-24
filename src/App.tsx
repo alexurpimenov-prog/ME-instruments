@@ -79,6 +79,12 @@ export default function App() {
           <Calculator />
 
           <ButtonCard onClick={() => console.log('Клик!')} />
+
+<ProcessFlow
+  steps={PROCESS_STEPS}
+  imageOverrides={imageOverrides}
+  onImageUploaded={handleImageUploaded}
+/>
           
           {/* Seamless Process Flow */}
           <ProcessFlow
