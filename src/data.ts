@@ -62,7 +62,7 @@ export const PROCESS_STEPS: ProcessStepData[] = [
     icon: '⚙️',
     title: 'Система автоматического дозирования',
     description: 'Роботизированная система с максимальным функционалом для NGS',
-    imageSrc: 'images/Liquid_Handing_Workstation.png',
+    imageSrc: 'images/Liquid_Handing_Workstation_v2.png',
     imageAlt: 'Система дозирования',
   },
   {
