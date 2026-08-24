@@ -29,18 +29,6 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   return (
     <div className="process-wrapper" id="process-section">
       <h3>Интеграция с роботизированной платформой для подготовки библиотек ME Instruments</h3>
-      
-      <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0 3rem 0' }}>
-        <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
-          <ImageSlot
-            src="images/Liquid_Handing_Workstation_v2.png"
-            alt="Liquid Handling Workstation"
-            overrideSrc={imageOverrides["images/Liquid_Handing_Workstation_v2.png"]}
-            onImageUploaded={onImageUploaded}
-            className="w-full h-full"
-          />
-        </div>
-      </div>
 
       <div style={{ 
         display: 'grid', 
@@ -51,7 +39,19 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
         
         <div className="system-column-left">
           <div style={{ borderBottom: '2px solid #0066cc', paddingBottom: '8px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>Система автоматизации 1</h3>
+            <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>UNIPre-24/96</h3>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
+            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+              <ImageSlot
+                src="images/Liquid_Handing_Workstation_v2.png"
+                alt="Liquid Handling Workstation"
+                overrideSrc={imageOverrides["images/Liquid_Handing_Workstation_v2.png"]}
+                onImageUploaded={onImageUploaded}
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           <div className="unified-tech-card" style={{ marginBottom: '2rem', boxShadow: 'none', padding: '12px 0' }}>
@@ -191,15 +191,22 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
           </div>
         </div>
 
-        <div className="system-column-right" style={{ opacity: 0.75 }}>
-          <div style={{ borderBottom: '2px solid #94a3b8', paddingBottom: '8px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '1.4rem', color: '#64748b', margin: 0 }}>Система автоматизации 2</h3>
+        <div className="system-column-right">
+          <div style={{ borderBottom: '2px solid #0066cc', paddingBottom: '8px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>UNIPre-1</h3>
           </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
+            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px', minHeight: '200px', border: '2px dashed #cbd5e1', borderRadius: '12px', backgroundColor: '#f8fafc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Место для фото UNIPre-1</span>
+            </div>
+          </div>
+
           <div className="unified-tech-card" style={{ boxShadow: 'none', padding: '40px 24px', border: '2px dashed #cbd5e1', borderRadius: '12px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', minHeight: '400px' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
               <Plus className="w-6 h-6 text-[#94a3b8]" />
             </div>
-            <h4 style={{ margin: '0 0 8px 0', color: '#475569', fontSize: '1.1rem' }}>Спецификации Системы 2</h4>
+            <h4 style={{ margin: '0 0 8px 0', color: '#475569', fontSize: '1.1rem' }}>Спецификации UNIPre-1</h4>
             <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9rem', maxWidth: '280px' }}>Этот блок подготовлен для конфигурации второй платформы. Данные появятся после выбора спецификаций.</p>
           </div>
         </div>
