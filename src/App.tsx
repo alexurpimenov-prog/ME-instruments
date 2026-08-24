@@ -78,7 +78,7 @@ export default function App() {
 
           <Calculator />
 
-          <ButtonCard />
+          <ButtonCard onClick={() => console.log('Клик сработал!')} />
 
           <ProcessFlow
           steps={PROCESS_STEPS}
