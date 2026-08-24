@@ -80,17 +80,10 @@ export default function App() {
 
           <ButtonCard onClick={() => console.log('Клик!')} />
 
-<ProcessFlow
-  steps={PROCESS_STEPS}
-  imageOverrides={imageOverrides}
-  onImageUploaded={handleImageUploaded}
-/>
-          
-          {/* Seamless Process Flow */}
           <ProcessFlow
-            steps={PROCESS_STEPS}
-            imageOverrides={imageOverrides}
-            onImageUploaded={handleImageUploaded}
+          steps={PROCESS_STEPS}
+          imageOverrides={imageOverrides}
+          onImageUploaded={handleImageUploaded}
           />
 
           {/* Regulatory & RU Disclaimer */}
