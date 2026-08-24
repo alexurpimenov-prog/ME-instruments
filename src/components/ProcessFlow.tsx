@@ -197,10 +197,16 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
-            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px', minHeight: '200px', border: '2px dashed #cbd5e1', borderRadius: '12px', backgroundColor: '#f8fafc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Место для фото UNIPre-1</span>
-            </div>
-          </div>
+  <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+    <ImageSlot
+      src="assets/images/UNIPre-1.jpg"
+      alt="UNIPre-1"
+      overrideSrc={imageOverrides["assets/images/UNIPre-1.jpg"]}
+      onImageUploaded={onImageUploaded}
+      className="w-full h-full"
+    />
+  </div>
+</div>
 
           <div className="unified-tech-card" style={{ boxShadow: 'none', padding: '40px 24px', border: '2px dashed #cbd5e1', borderRadius: '12px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', minHeight: '400px' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
