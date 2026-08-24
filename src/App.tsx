@@ -107,7 +107,7 @@ export default function App() {
               Инженерные преимущества интеграции полупроводникового чипа
             </h4>
             <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: '#64748b', lineHeight: '1.4' }}>
-              Перенос сложности с громоздкой оптики на интегрированный чип компенсирует двухшаговую химию целым комплексом преимуществ:
+              Почему секвенаторы UniSeq такие быстрые и точные
             </p>
             
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
