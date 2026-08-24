@@ -27,7 +27,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
 }) => {
   return (
     <div className="process-wrapper" id="process-section">
-      <h3>Интеграция с роботизированной платформой для пробоподготовки ME Instruments</h3>
+      <h3>Интеграция с роботизированной платформой для подготовки библиотек ME Instruments</h3>
       <p className="sub">Полный конвейер: от образца до готового отчёта</p>
 
       {/* Раздел 1: Ключевые преимущества */}
