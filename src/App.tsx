@@ -77,6 +77,13 @@ export default function App() {
 
           <Calculator />
 
+                    <ProcessFlow
+            steps={PROCESS_STEPS}
+            imageOverrides={imageOverrides}
+            onImageUploaded={handleImageUploaded}
+          />
+
+
           {/* Regulatory & RU Disclaimer */}
           <DisclaimerCard />
         </div>
