@@ -114,7 +114,7 @@ export default function App() {
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
                 <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
                 <div>
-                  <strong>Мгновенная детекция (Contact Imaging):</strong> Снимок всего поля CMOS-матрицы происходит одномоментно за миллисекунды. Фокус жестко зафиксирован на заводе, а механика покадровой съемки по участкам и XY-столиков отсутствует (экономя до 60–70% времени цикла).
+                  <strong>Мгновенная детекция (Contact Imaging):</strong> Снимок всего поля CMOS-матрицы происходит одномоментно за миллисекунды. Фокус жестко зафиксирован на заводе, а механика покадровой съемки по участкам отсутствует, что существенно уменьшает время цикла.
                 </div>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
