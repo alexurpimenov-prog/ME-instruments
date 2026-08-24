@@ -1,113 +1,59 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-interface ButtonCardProps {
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}
-
-// Экспортируем строго как default, чтобы в App.tsx работало без фигурных скобок!
-export default function ButtonCard({ onClick }: ButtonCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
+export default function ButtonCard() {
   return (
-    <div style={{ width: '100%', boxSizing: 'border-box', fontFamily: 'sans-serif' }}>
-      <button
-        onClick={onClick}
-        type="button"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          marginTop: '15px',
-          marginBottom: '35px',
-          backgroundColor: '#ffffff',
-          borderRadius: '12px',
-          boxShadow: isHovered 
-            ? '0 12px 20px -8px rgba(0, 102, 204, 0.12)' 
-            : '0 4px 12px -2px rgba(0, 0, 0, 0.03)',
-          border: isHovered ? '1px solid #0066cc' : '1px solid #e2e8f0',
-          padding: '18px 24px',
-          width: '100%',
-          boxSizing: 'border-box',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '16px',
-          transition: 'all 0.2s ease-in-out',
-          outline: 'none'
-        }}
-      >
-        {/* Левая часть: Иконка и ваше название */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div style={{
-            padding: '8px',
-            backgroundColor: isHovered ? '#0066cc' : '#eff6ff',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'all 0.2s'
-          }}>
-            <svg 
-              xmlns="http://w3.org" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke={isHovered ? '#ffffff' : '#0066cc'} 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="8" r="7" />
-              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-            </svg>
-          </div>
-          
-          {/* НАЗВАНИЕ КНОПКИ ЖЁСТКО ПРОПИСАНО ЗДЕСЬ */}
-          <h3 style={{
-            fontSize: '16px',
-            fontWeight: '600',
-            color: isHovered ? '#0066cc' : '#1e293b',
-            margin: 0,
-            lineHeight: '1.2',
-            transition: 'color 0.2s'
-          }}>
-            Хочу знать больше про технические преимущества
-          </h3>
-        </div>
-
-        {/* Правая часть: Указатель "Подробнее" */}
+    <div style={{ 
+      width: '100%', 
+      boxSizing: 'border-box', 
+      fontFamily: 'sans-serif',
+      marginTop: '20px',
+      marginBottom: '40px',
+      backgroundColor: '#ffffff',
+      borderRadius: '16px',
+      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)',
+      border: '1px solid #f1f5f9',
+      padding: '20px 32px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: '16px'
+    }}>
+      {/* Левая часть: Иконка и Название */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <div style={{
+          padding: '10px',
+          backgroundColor: '#eff6ff',
+          borderRadius: '10px',
           display: 'flex',
           alignItems: 'center',
-          gap: '6px',
-          fontSize: '13px',
-          fontWeight: '600',
-          color: isHovered ? '#0066cc' : '#64748b',
-          transition: 'color 0.2s',
-          flexShrink: 0
+          justifyContent: 'center'
         }}>
-          <span>Подробнее</span>
-          <svg 
-            xmlns="http://w3.org" 
-            width="14" 
-            height="14" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2.5" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            style={{
-              transition: 'transform 0.2s',
-              transform: isHovered ? 'translate(2px, -2px)' : 'none'
-            }}
-          >
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+          <span style={{ fontSize: '20px' }}>🛡️</span>
         </div>
-      </button>
+        
+        <h3 style={{
+          fontSize: '18px',
+          fontWeight: '700',
+          color: '#1e293b',
+          margin: 0,
+          lineHeight: '1.4'
+        }}>
+          Хочу знать больше про технические преимущества
+        </h3>
+      </div>
+
+      {/* Правая часть: Метка */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        fontSize: '14px',
+        fontWeight: '600',
+        color: '#64748b'
+      }}>
+        <span>Подробнее</span>
+        <span style={{ fontSize: '16px' }}>↗</span>
+      </div>
     </div>
   );
 }
