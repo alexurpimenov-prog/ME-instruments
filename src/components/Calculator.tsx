@@ -115,7 +115,7 @@ export default function Calculator() {
         </div>
         
         <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '24px', lineHeight: '1.5', margin: '0 0 24px 0' }}>
-          Рассчитайте оптимальное количество образцов на один запуск с учётом ПЦР-дубликатов.
+          Рассчитайте оптимальное количество образцов на один запуск с учётом ожидаемых ПЦР-дубликатов доли On-Target.
         </p>
 
         {warningMessage && (
