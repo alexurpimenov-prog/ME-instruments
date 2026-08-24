@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-// Описываем типы для входящих параметров (props) кнопки в стиле TypeScript
 interface ButtonCardProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function ButtonCard({ onClick }: ButtonCardProps): React.JSX.Element {
-  // Состояние для отслеживания наведения курсора мыши (hover эффект)
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
@@ -38,7 +36,7 @@ export default function ButtonCard({ onClick }: ButtonCardProps): React.JSX.Elem
           transform: isHovered ? 'translateY(-1px)' : 'none'
         }}
       >
-        {/* Левая часть: Иконка-эмодзи и название кнопки */}
+        {/* Текст и иконка слева */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', pointerEvents: 'none' }}>
           <div style={{
             padding: '10px',
@@ -65,7 +63,7 @@ export default function ButtonCard({ onClick }: ButtonCardProps): React.JSX.Elem
           </h3>
         </div>
 
-        {/* Правая часть: Текст-указатель со стрелочкой */}
+        {/* Метка "Подробнее" и стрелка справа */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
@@ -89,4 +87,3 @@ export default function ButtonCard({ onClick }: ButtonCardProps): React.JSX.Elem
     </div>
   );
 }
-
