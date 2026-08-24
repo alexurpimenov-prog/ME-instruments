@@ -1,6 +1,18 @@
 import React from 'react';
 import { ProcessStepData } from '../types';
 import { ImageSlot } from './ImageSlot';
+import { 
+  Cpu, 
+  Settings, 
+  Activity, 
+  RotateCcw, 
+  ShieldAlert, 
+  History, 
+  Flame, 
+  Thermometer, 
+  Snowflake,
+  Layers
+} from 'lucide-react';
 
 interface ProcessFlowProps {
   steps: ProcessStepData[];
@@ -14,113 +26,150 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   onImageUploaded,
 }) => {
   return (
-    <div className="process-wrapper max-w-7xl mx-auto px-4 py-12" id="process-section">
-      <h3 className="text-3xl font-bold text-center text-blue-900 mb-2">
-        Интеграция в безшовный автоматизированный процесс ME Instruments
-      </h3>
-      <p className="sub text-center text-slate-500 text-lg mb-12">
-        Полный конвейер: от образца до готового отчёта
-      </p>
+    <div className="process-wrapper" id="process-section">
+      <h3>Интеграция в безшовный автоматизированный процесс ME Instruments</h3>
+      <p className="sub">Полный конвейер: от образца до готового отчёта</p>
 
-      {/* Информационный блок преимуществ и модулей */}
-      <div className="flex flex-col gap-14 mb-16">
-        
-        {/* Секция 1: Ключевые преимущества */}
-        <section className="features-block">
-          <h4 className="flex items-center gap-3 mb-6 text-2xl font-bold text-slate-800">
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-xl">🚀</span> 
+      {/* Раздел 1: Ключевые преимущества */}
+      <div className="unified-tech-card" style={{ marginBottom: '3rem', boxShadow: 'none', padding: '24px 0' }}>
+        <div className="unified-tech-header">
+          <div className="unified-tech-badge">
+            <Layers className="w-4 h-4 text-[#0066cc]" />
+            <span>Автоматизация и эффективность</span>
+          </div>
+          <h3 className="unified-tech-title" style={{ fontSize: '1.6rem', marginTop: '8px' }}>
             Ключевые преимущества системы
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Процесс «Образец на входе — продукт на выходе»:
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </h3>
+        </div>
+
+        <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Cpu className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Процесс «Образец на входе — продукт на выходе»</h4>
+              <p className="unified-tech-item-desc">
                 Полная автоматизация всего конвейера NGS — от экстракции образца до пре-подготовки библиотек, гибридизационного захвата и контроля качества без участия человека.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Защита от ложных настроек (Адаптивность):
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Settings className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Защита от ложных настроек (Адаптивность)</h4>
+              <p className="unified-tech-item-desc">
                 Умное ПО самостоятельно распознает количество загруженных образцов, автоматически распределяет лунки и подбирает режимы сброса наконечников, исключая повторные ручные перенастройки.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Встроенный флуориметрический контроль:
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Activity className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Встроенный флуориметрический контроль</h4>
+              <p className="unified-tech-item-desc">
                 Наличие встроенного модуля Qubit позволяет системе автоматически рассчитывать объемы ДНК, проводить разведения и пулирование библиотек по результатам реальных измерений.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Защита от сбоев (Продолжение работы):
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <RotateCcw className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Защита от сбоев (Продолжение работы)</h4>
+              <p className="unified-tech-item-desc">
                 Программное обеспечение поддерживает функцию продолжения прерванного цикла — эксперимент можно возобновить в один клик с любого выбранного шага.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Безопасность и чистота:
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <ShieldAlert className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Безопасность и чистота</h4>
+              <p className="unified-tech-item-desc">
                 Корпус оснащен стандартной УФ-лампой для стерилизации, а также поддерживает установку высокоэффективных HEPA-фильтров для защиты от перекрестного загрязнения.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-blue-900">
-                Глубокая прослеживаемость:
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <History className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Глубокая прослеживаемость</h4>
+              <p className="unified-tech-item-desc">
                 Система автоматически ведет и сохраняет подробные журналы работы и логи оборудования на протяжении минимум 3 лет для быстрого поиска причин ошибок.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* Секция 2: Температурные модули */}
-        <section className="modules-block">
-          <h4 className="flex items-center gap-3 mb-6 text-2xl font-bold text-slate-800">
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-50 text-xl">🧬</span> 
+      {/* Раздел 2: Температурные модули */}
+      <div className="unified-tech-card" style={{ marginBottom: '4rem', boxShadow: 'none', padding: '24px 0' }}>
+        <div className="unified-tech-header">
+          <div className="unified-tech-badge">
+            <Thermometer className="w-4 h-4 text-[#0066cc]" />
+            <span>Термоконтроль и термостабилизация</span>
+          </div>
+          <h3 className="unified-tech-title" style={{ fontSize: '1.6rem', marginTop: '8px' }}>
             Встроенные температурные и ПЦР-модули
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-indigo-900">
-                Автоматические ПЦР-модули (на 24 или 96 образцов):
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </h3>
+        </div>
+
+        <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Flame className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Автоматические ПЦР-модули (на 24 или 96 образцов)</h4>
+              <p className="unified-tech-item-desc">
                 Робот сам проводит температурные циклы (амплификацию) библиотек. Крышка блока открывается и закрывается автоматически по команде программы. Высокая скорость нагрева и охлаждения (не менее 1.3 °C в секунду) существенно экономит общее время анализа, а ювелирная точность (стабильность температуры ±0.1 °C) гарантирует идеальную повторяемость результатов.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-indigo-900">
-                Модуль нагрева и встряхивания (Термошейкер):
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Activity className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Модуль нагрева и встряхивания (Термошейкер)</h4>
+              <p className="unified-tech-item-desc">
                 Позволяет одновременно инкубировать и интенсивно перемешивать реакционные смеси. Он развивает скорость до 3000 оборотов в минуту для достижения абсолютной однородности растворов и может нагревать образцы вплоть до 100 °C.
               </p>
             </div>
-            <div className="feature-card p-6 border border-slate-100 rounded-xl bg-gradient-to-b from-white to-slate-50 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <strong className="block mb-2 text-lg font-semibold text-indigo-900">
-                Термостатический модуль (Охлаждающий стол):
-              </strong> 
-              <p className="text-slate-600 text-sm leading-relaxed">
+          </div>
+
+          <div className="unified-tech-item">
+            <div className="unified-tech-icon-wrapper">
+              <Snowflake className="w-5 h-5 text-[#0066cc]" />
+            </div>
+            <div className="unified-tech-item-content">
+              <h4 className="unified-tech-item-title">Термостатический модуль (Охлаждающий стол)</h4>
+              <p className="unified-tech-item-desc">
                 Отвечает за бережное хранение капризных ферментов и мастер-миксов прямо в рабочей зоне робота. Модуль работает в диапазоне от 4 до 75 °C, удерживая стабильные +4 °C, чтобы дорогие реагенты не деградировали во время многочасового процесса раскапывания.
               </p>
             </div>
           </div>
-        </section>
-
+        </div>
       </div>
 
-      {/* Интерактивный процесс шагов */}
-      <div className="vertical-flow mt-10">
+      {/* Раздел 3: Интерактивный процесс */}
+      <div className="vertical-flow">
         {steps.map((step, index) => (
           <React.Fragment key={step.number}>
             <div className="process-step" id={`step-${step.number}`}>
