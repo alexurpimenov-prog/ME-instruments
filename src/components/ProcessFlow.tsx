@@ -198,10 +198,12 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
 
            <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
             <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
-              <img 
-                src="images/UNIPre-1.jpg" 
-                alt="UNIPre-1" 
-                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+              <ImageSlot
+                src="images/UNIPre-1.jpg"
+                alt="UNIPre-1"
+                overrideSrc={imageOverrides["images/UNIPre-1.jpg"]}
+                onImageUploaded={onImageUploaded}
+                className="w-full h-full"
               />
             </div>
           </div>
