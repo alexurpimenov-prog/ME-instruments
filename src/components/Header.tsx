@@ -12,8 +12,29 @@ export const Header: React.FC<HeaderProps> = ({
   onImageUploaded,
 }) => {
   return (
-    <header className="header-section">
-      <div className="container">
+    <header 
+      className="header-section"
+      style={{
+        position: 'relative',
+        backgroundImage: "url('/images/background.png')", // Ваше название картинки
+        backgroundSize: 'cover',
+        backgroundPosition: 'center right', // 3D-спираль ДНК останется справа
+        backgroundRepeat: 'no-repeat',
+        color: '#ffffff', // Делаем текст белым для контраста
+        padding: '60px 0', // Хорошие вертикальные отступы
+      }}
+    >
+      {/* Мягкое напыление, чтобы белый текст не сливался со светлыми участками ДНК */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundColor: 'rgba(15, 23, 42, 0.3)', 
+        zIndex: 1,
+        pointerEvents: 'none'
+      }} />
+
+      {/* Контент поверх фона */}
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="logo-placeholder">
           <ImageSlot
             src="images/Logo2.png"
@@ -33,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Сайт кнопкой */}
           <div className="contact-row">
             <a
-              href="https://new.bioline.ru/"
+              href="https://bioline.ru"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-btn contact-btn-primary"
