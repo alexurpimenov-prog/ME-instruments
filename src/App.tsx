@@ -78,11 +78,8 @@ export default function App() {
 
           <Calculator />
 
-          {/* Сетка после калькулятора, содержащая только вашу новую кнопку */}
-          <div className="sequencer-grid">
-            <ButtonCard onClick={() => console.log('Клик!')} />
-          </div>
-
+          <ButtonCard onClick={() => console.log('Клик!')} />
+          
           {/* Seamless Process Flow */}
           <ProcessFlow
             steps={PROCESS_STEPS}
