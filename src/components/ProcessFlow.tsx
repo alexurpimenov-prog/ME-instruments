@@ -196,12 +196,12 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
             <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>UNIPre-1</h3>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
-            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px', height: '300px' }}>
+           <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
+            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
               <img 
                 src="images/UNIPre-1.jpg" 
                 alt="UNIPre-1" 
-                style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }}
+                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
               />
             </div>
           </div>
