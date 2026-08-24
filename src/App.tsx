@@ -104,7 +104,7 @@ export default function App() {
             title="Кликните, чтобы свернуть"
           >
             <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: '700', color: '#1e293b' }}>
-              Инженерные преимущества интеграции полупроводникового чипа
+              Инженерные преимущества монохромности и микрофлюидики
             </h4>
             <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: '#64748b', lineHeight: '1.4' }}>
               Почему секвенаторы UniSeq такие быстрые и точные
