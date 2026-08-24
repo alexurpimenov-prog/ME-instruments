@@ -14,6 +14,7 @@ import { getAllImagesFromDB, saveImageToDB, clearAllImagesFromDB } from './utils
 export default function App() {
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
   const [isManagerOpen, setIsManagerOpen] = useState(false);
+  const [isTechOpen, setIsTechOpen] = useState(false);
 
   // Load saved images from IndexedDB on startup
   useEffect(() => {
@@ -78,7 +79,40 @@ export default function App() {
 
           <Calculator />
 
-          <ButtonCard onClick={() => console.log('Клик сработал!')} />
+                    {/* Кнопка переключает состояние true/false */}
+          <ButtonCard onClick={() => setIsTechOpen(!isTechOpen)} />
+
+          {/* Раскрывающийся блок, который закроется при клике на сам текст */}
+          <div 
+            onClick={() => setIsTechOpen(false)} 
+            style={{
+              width: '100%',
+              boxSizing: 'border-box',
+              fontFamily: 'sans-serif',
+              maxHeight: isTechOpen ? '300px' : '0px', 
+              opacity: isTechOpen ? 1 : 0,
+              overflow: 'hidden',
+              transition: 'all 0.3s ease-in-out',
+              marginTop: isTechOpen ? '-25px' : '0px',
+              marginBottom: isTechOpen ? '35px' : '0px',
+              backgroundColor: '#f8fafc',
+              borderRadius: '12px',
+              border: isTechOpen ? '1px solid #e2e8f0' : '1px solid transparent',
+              padding: isTechOpen ? '24px' : '0px 24px',
+              cursor: 'pointer' 
+            }}
+            title="Кликните, чтобы свернуть"
+          >
+            <p style={{ 
+              fontSize: '16px', 
+              color: '#334155', 
+              lineHeight: '1.6', 
+              margin: 0 
+            }}>
+              Привет
+            </p>
+          </div>
+
 
           <ProcessFlow
           steps={PROCESS_STEPS}
