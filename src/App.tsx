@@ -14,7 +14,6 @@ import { getAllImagesFromDB, saveImageToDB, clearAllImagesFromDB } from './utils
 export default function App() {
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
   const [isManagerOpen, setIsManagerOpen] = useState(false);
-  const [isTechOpen, setIsTechOpen] = useState(false);
 
   // Load saved images from IndexedDB on startup
   useEffect(() => {
@@ -78,81 +77,6 @@ export default function App() {
           <TechnologyCard />
 
           <Calculator />
-
-          {/* Кнопка переключает состояние true/false */}
-          <ButtonCard onClick={() => setIsTechOpen(!isTechOpen)} />
-
-          {/* Раскрывающийся блок с техническими преимуществами */}
-          <div 
-            onClick={() => setIsTechOpen(false)} 
-            style={{
-              width: '100%',
-              boxSizing: 'border-box',
-              fontFamily: 'sans-serif',
-              maxHeight: isTechOpen ? '800px' : '0px', 
-              opacity: isTechOpen ? 1 : 0,
-              overflow: 'hidden',
-              transition: 'all 0.4s ease-in-out',
-              marginTop: isTechOpen ? '-25px' : '0px',
-              marginBottom: isTechOpen ? '35px' : '0px',
-              backgroundColor: '#f8fafc',
-              borderRadius: '12px',
-              border: isTechOpen ? '1px solid #e2e8f0' : '1px solid transparent',
-              padding: isTechOpen ? '28px' : '0px 28px',
-              cursor: 'pointer' 
-            }}
-            title="Кликните, чтобы свернуть"
-          >
-            <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: '700', color: '#1e293b' }}>
-              Инженерные преимущества монохромности и микрофлюидики
-            </h4>
-            <p style={{ margin: '0 0 20px 0', fontSize: '14px', color: '#64748b', lineHeight: '1.4' }}>
-              Почему секвенаторы UniSeq такие быстрые и точные
-            </p>
-            
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
-                <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
-                <div>
-                  <strong>Мгновенная детекция (Contact Imaging):</strong> Снимок всего поля CMOS-матрицы происходит одномоментно за миллисекунды. Фокус жестко зафиксирован на заводе, а механика покадровой съемки по участкам отсутствует, что существенно уменьшает время цикла.
-                </div>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
-                <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
-                <div>
-                  <strong>Ультрамикрофлюидика и быстрый обмен реагентов:</strong> Объемы реакционных каналов уменьшены до микролитров, а мертвый объем капилляров сведен к нулю. Полная замена буферов и сброс отработанных растворов занимают всего 1–3 секунды вместо 30–60 секунд.
-                </div>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
-                <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
-                <div>
-                  <strong>Высокоскоростная терморегуляция:</strong> Минимальный объем жидкости в прямом контакте с кремниевой подложкой обеспечивает мгновенный прогрев и охлаждение. Это ускоряет в разы ферментативное включение и химическое расщепление при повышенных температурах.
-                </div>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
-                <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
-                <div>
-                  <strong>Идеальное совмещение кадров (Zero Alignment Drift):</strong> Отсутствует необходимость программно «сшивать» кадры разных цветов и компенсировать хроматические аберрации линз. Оба монохромных снимка падают на одни и те же пиксели без пространственного сдвига.
-                </div>
-              </li>
-              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#334155', lineHeight: '1.5' }}>
-                <span style={{ color: '#0066cc', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
-                <div>
-                  <strong>Высокий коэффициент собираемости света (SNR):</strong> Флуоресцентное свечение попадает на матрицу напрямую через тончайший слой. Свет не теряется (до 40–60% фотонов) в воздухе, объективах, дихроичных зеркалах и эмиссионных фильтрах классических систем.
-                </div>
-              </li>
-            </ul>
-            
-            <p style={{ margin: '20px 0 0 0', fontSize: '13px', color: '#94a3b8', fontStyle: 'italic', textAlign: 'right' }}>
-              Нажмите в любое место блока, чтобы свернуть его
-            </p>
-          </div>
-
-          <ProcessFlow
-            steps={PROCESS_STEPS}
-            imageOverrides={imageOverrides}
-            onImageUploaded={handleImageUploaded}
-          />
 
           {/* Regulatory & RU Disclaimer */}
           <DisclaimerCard />
