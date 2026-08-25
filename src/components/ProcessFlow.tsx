@@ -12,7 +12,10 @@ import {
   Thermometer, 
   Snowflake,
   Layers,
-  Plus
+  Plus,
+  Server,
+  Zap,
+  CheckCircle
 } from 'lucide-react';
 
 interface ProcessFlowProps {
@@ -37,6 +40,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
         marginBottom: '4rem' 
       }}>
         
+        {/* ================= ЛЕВАЯ КОЛОНКА: UNIPre-1 ================= */}
         <div className="system-column-left">
           <div style={{ borderBottom: '2px solid #0066cc', paddingBottom: '8px', marginBottom: '24px' }}>
             <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>UNIPre-1</h3>
@@ -54,15 +58,120 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
             </div>
           </div>
 
-          <div className="unified-tech-card" style={{ boxShadow: 'none', padding: '40px 24px', border: '2px dashed #cbd5e1', borderRadius: '12px', backgroundColor: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', minHeight: '400px' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-              <Plus className="w-6 h-6 text-[#94a3b8]" />
+          <div className="unified-tech-card" style={{ marginBottom: '2rem', boxShadow: 'none', padding: '12px 0' }}>
+            <div className="unified-tech-header">
+              <div className="unified-tech-badge">
+                <Layers className="w-4 h-4 text-[#0066cc]" />
+                <span>Автоматизация и эффективность</span>
+              </div>
+              <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
+                Ключевые преимущества системы
+              </h3>
             </div>
-            <h4 style={{ margin: '0 0 8px 0', color: '#475569', fontSize: '1.1rem' }}>Спецификации UNIPre-1</h4>
-            <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9rem', maxWidth: '280px' }}>Этот блок подготовлен для конфигурации второй платформы. Данные появятся после выбора спецификаций.</p>
+
+            <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Cpu className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Принцип «Образец на входе — библиотека на выходе»</h4>
+                  <p className="unified-tech-item-desc">
+                    Система автоматизирует весь процесс от библиотеки до гибридизационного захвата. Пользователю достаточно загрузить образец и картриджи с премиксованными реагентами. Весь процесс проходит внутри закрытой системы, что сводит к минимуму риск контаминации и ошибки оператора.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Settings className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Идеальное решение для малых и средних лабораторий</h4>
+                  <p className="unified-tech-item-desc">
+                    Это единственная в своем роде система, ориентированная на работу с одним образцом за прогон. Такая конструкция полностью исключает простои и перерасход дорогостоящих реагентов, что критически важно при работе с редкими или небольшими панелями. Это позволяет запускать образцы по мере поступления, а не накапливать их для заполнения 96-луночного планшета.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Activity className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Масштабируемость под любую мощность</h4>
+                  <p className="unified-tech-item-desc">
+                    Несмотря на компактность, система гибко масштабируется. Один компьютер может одновременно управлять 8 или 16 модулями UNIPre-1, работающими параллельно. Это позволяет лаборатории наращивать пропускную способность «по модульному принципу», начиная с одного аппарата и постепенно увеличивая парк, не переплачивая за избыточную мощность.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <ShieldAlert className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Защита от ошибок и прослеживаемость</h4>
+                  <p className="unified-tech-item-desc">
+                    Как и старшие системы, UNIPre-1 оснащен интеллектуальным ПО, которое контролирует каждый этап. Встроенные алгоритмы автоматически ведут журнал операций, что обеспечивает полную прослеживаемость эксперимента.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Zap className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Экономия ресурсов и пространства</h4>
+                  <p className="unified-tech-item-desc">
+                    Картриджи с реагентами поставляются в готовом к работе виде, исключая этап трудоемкого ручного дозирования. Минимальное потребление расходных материалов и компактные размеры делают UNIPre-1 идеальным выбором для лабораторий с ограниченным пространством или бюджетом, где важно качество без лишних затрат.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="unified-tech-card" style={{ boxShadow: 'none', padding: '12px 0' }}>
+            <div className="unified-tech-header">
+              <div className="unified-tech-badge">
+                <Thermometer className="w-4 h-4 text-[#0066cc]" />
+                <span>Термоконтроль и термостабилизация</span>
+              </div>
+              <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
+                Встроенные температурные и ПЦР-модули
+              </h3>
+            </div>
+
+            <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Flame className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Встроенный ПЦР-модуль</h4>
+                  <p className="unified-tech-item-desc">
+                    Робот сам проводит температурные циклы (амплификацию) библиотек. Крышка блока открывается и закрывается автоматически по команде программы. Высокая скорость нагрева и охлаждения (не менее 1.3 °C в секунду) существенно экономит общее время анализа, а ювелирная точность (стабильность температуры ±0.1 °C) гарантирует идеальную повторяемость результатов.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Snowflake className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Термостатический модуль (Охлаждающий стол)</h4>
+                  <p className="unified-tech-item-desc">
+                    Отвечает за бережное хранение капризных ферментов и мастер-миксов прямо в рабочей зоне робота. Модуль работает в диапазоне от 4 до 75 °C, удерживая стабильные +4 °C, чтобы дорогие реагенты не деградировали во время многочасового процесса раскапывания.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* ================= ПРАВАЯ КОЛОНКА: UNIPre-24/96 ================= */}
         <div className="system-column-right">
           <div style={{ borderBottom: '2px solid #0066cc', paddingBottom: '8px', marginBottom: '24px' }}>
             <h3 style={{ fontSize: '1.4rem', color: '#0066cc', margin: 0 }}>UNIPre-24/96</h3>
