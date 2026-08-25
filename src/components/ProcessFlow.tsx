@@ -32,7 +32,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
 }) => {
   return (
     <div className="process-wrapper" id="process-section">
-      <h3>Интеграция с роботизированной платформой для подготовки библиотек ME Instruments</h3>
+      <h3>Интеграция с платформами для подготовки библиотек ME Instruments</h3>
 
       <div style={{ 
         display: 'grid', 
