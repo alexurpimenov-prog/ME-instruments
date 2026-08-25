@@ -31,7 +31,12 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
   onImageUploaded,
 }) => {
   return (
-    <div className="process-wrapper" id="process-section">
+    <div className="process-wrapper" id="process-section" style={{ 
+      paddingLeft: '1rem', 
+      paddingRight: '1rem',
+      maxWidth: '1200px',
+      margin: '0 auto'
+    }}>
       <h3>Интеграция с платформами для подготовки библиотек ME Instruments</h3>
 
       <div style={{ 
