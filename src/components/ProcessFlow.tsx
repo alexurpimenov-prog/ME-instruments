@@ -75,7 +75,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <Cpu className="w-5 h-5 text-[#0066cc]" />
                 </div>
                 <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">Принцип «Образец на входе — библиотека на выходе»</h4>
+                  <h4 className="unified-tech-item-title">«Образец на входе — библиотека на выходе»</h4>
                   <p className="unified-tech-item-desc">
                     Система автоматизирует весь процесс от библиотеки до гибридизационного захвата. Пользователю достаточно загрузить образец и картриджи с премиксованными реагентами. Весь процесс проходит внутри закрытой системы, что сводит к минимуму риск контаминации и ошибки оператора.
                   </p>
@@ -182,7 +182,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 <span>Автоматизация и эффективность</span>
               </div>
               <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-                Ключевые преимущества системы
+                Полнофункциональная автоматизированная платформа для подготовки библиотек
               </h3>
             </div>
 
@@ -192,7 +192,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <Cpu className="w-5 h-5 text-[#0066cc]" />
                 </div>
                 <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">Процесс «Образец на входе — продукт на выходе»</h4>
+                  <h4 className="unified-tech-item-title">«Образец на входе — продукт на выходе»</h4>
                   <p className="unified-tech-item-desc">
                     Полная автоматизация всего конвейера NGS — от экстракции образца до пре-подготовки библиотек, гибридизационного захвата и контроля качества без участия человека.
                   </p>
