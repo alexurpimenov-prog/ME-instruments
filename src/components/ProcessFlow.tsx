@@ -195,7 +195,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 <span>Автоматизация и эффективность</span>
               </div>
               <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-                Полнофункциональная автоматизированная платформа для подготовки библиотек
+                Полнофункциональная автоматизированная модульная платформа для подготовки библиотек
               </h3>
             </div>
 
