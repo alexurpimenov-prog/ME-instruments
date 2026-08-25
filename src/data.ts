@@ -48,3 +48,4 @@ export const SEQUENCERS: SequencerData[] = [
   },
 ];
 
+export const PROCESS_STEPS: ProcessStepData[] = [];
