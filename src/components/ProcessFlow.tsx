@@ -70,6 +70,18 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
             </div>
 
             <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
+                <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+                  <ImageSlot
+                    src="images/UNIPre-1_3.png"
+                    alt="UNIPre-1 схема работы"
+                    overrideSrc={imageOverrides["images/UNIPre-1_3.png"]}
+                    onImageUploaded={onImageUploaded}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+
               <div className="unified-tech-item">
                 <div className="unified-tech-icon-wrapper">
                   <Cpu className="w-5 h-5 text-[#0066cc]" />
@@ -79,18 +91,6 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <p className="unified-tech-item-desc">
                     Система автоматизирует весь процесс от библиотеки до гибридизационного захвата. Пользователю достаточно загрузить образец и картриджи с премиксованными реагентами. Весь процесс проходит внутри закрытой системы, что сводит к минимуму риск контаминации и ошибки оператора.
                   </p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', justifyContent: 'center', margin: '1.5rem 0 2rem 0' }}>
-                <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
-                  <ImageSlot
-                    src="images/UNIPre-1_3.png"
-                    alt="UNIPre-1 схема работы"
-                    overrideSrc={imageOverrides["images/UNIPre-1_3.png"]}
-                    onImageUploaded={onImageUploaded}
-                    className="w-full h-full"
-                  />
                 </div>
               </div>
 
@@ -187,12 +187,24 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
             </div>
 
             <div className="unified-tech-list" style={{ marginTop: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 2rem 0' }}>
+                <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+                  <ImageSlot
+                    src="images/Liquid_Handing_Workstation_v3.png"
+                    alt="Liquid Handling Workstation схема"
+                    overrideSrc={imageOverrides["images/Liquid_Handing_Workstation_v3.png"]}
+                    onImageUploaded={onImageUploaded}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+
               <div className="unified-tech-item">
                 <div className="unified-tech-icon-wrapper">
                   <Cpu className="w-5 h-5 text-[#0066cc]" />
                 </div>
                 <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">«Образец на входе — библиотека на выходе»</h4>
+                  <h4 className="unified-tech-item-title">«Образец на входе — продукт на выходе»</h4>
                   <p className="unified-tech-item-desc">
                     Полная автоматизация всего конвейера NGS — от экстракции образца до пре-подготовки библиотек, гибридизационного захвата и контроля качества без участия человека.
                   </p>
