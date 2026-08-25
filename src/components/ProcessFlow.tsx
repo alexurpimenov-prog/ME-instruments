@@ -195,7 +195,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 <span>Автоматизация и эффективность</span>
               </div>
               <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-                Полнофункциональная автоматизированная модульная платформа для подготовки библиотек
+                Полнофункциональная автоматизированная платформа для подготовки библиотек
               </h3>
             </div>
 
@@ -334,6 +334,59 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= БЛОК БИОИНФОРМАТИКИ ================= */}
+      <div style={{ 
+        marginTop: '2rem', 
+        marginBottom: '3rem',
+        borderTop: '1px solid #e2e8f0',
+        paddingTop: '3rem'
+      }}>
+        <div className="unified-tech-card" style={{ 
+          boxShadow: 'none', 
+          padding: '12px 0',
+          maxWidth: '800px',
+          margin: '0 auto'
+        }}>
+          <div className="unified-tech-header">
+            <div className="unified-tech-badge">
+              <Server className="w-4 h-4 text-[#0066cc]" />
+              <span>Биоинформатика</span>
+            </div>
+            <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
+              Лёгкая биоинформатика у нас на компьютере
+            </h3>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '1.5rem 0 2rem 0' }}>
+            <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+              <ImageSlot
+                src="images/BI.png"
+                alt="Биоинформатика"
+                overrideSrc={imageOverrides["images/BI.png"]}
+                onImageUploaded={onImageUploaded}
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+
+          <div style={{ 
+            padding: '0 1rem',
+            textAlign: 'center',
+            maxWidth: '700px',
+            margin: '0 auto'
+          }}>
+            <p style={{ 
+              fontSize: '1rem', 
+              color: '#475569', 
+              lineHeight: '1.7',
+              margin: 0
+            }}>
+              Готовые пайплайны и интеграция с биоинформатическими базами устанавливается на ваши компьютеры или сервера, или поставляются в виде готовой биоинформатической станции.
+            </p>
           </div>
         </div>
       </div>
