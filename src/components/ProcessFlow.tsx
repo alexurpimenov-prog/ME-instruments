@@ -338,7 +338,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
         </div>
       </div>
 
-      {/* ================= БЛОК БИОИНФОРМАТИКИ ================= */}
+      {/* ================= БЛОК БИОИНФОРМАТИКИ (НА ВСЮ ШИРИНУ) ================= */}
       <div style={{ 
         marginTop: '2rem', 
         marginBottom: '3rem',
@@ -347,16 +347,14 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
       }}>
         <div className="unified-tech-card" style={{ 
           boxShadow: 'none', 
-          padding: '12px 0',
-          maxWidth: '800px',
-          margin: '0 auto'
+          padding: '12px 0'
         }}>
-          <div className="unified-tech-header">
-            <div className="unified-tech-badge">
+          <div className="unified-tech-header" style={{ textAlign: 'center' }}>
+            <div className="unified-tech-badge" style={{ justifyContent: 'center' }}>
               <Server className="w-4 h-4 text-[#0066cc]" />
               <span>Биоинформатика</span>
             </div>
-            <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
+            <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px', textAlign: 'center' }}>
               Лёгкая биоинформатика у вас на компьютере
             </h3>
           </div>
