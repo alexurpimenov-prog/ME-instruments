@@ -62,10 +62,10 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
             <div className="unified-tech-header">
               <div className="unified-tech-badge">
                 <Layers className="w-4 h-4 text-[#0066cc]" />
-                <span>Автоматизация и эффективность</span>
+                <span>Простота и автономность</span>
               </div>
               <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-                Ключевые преимущества системы
+                Первая в мире картриджная полностью автоматизированная система подготовки библиотек
               </h3>
             </div>
 
