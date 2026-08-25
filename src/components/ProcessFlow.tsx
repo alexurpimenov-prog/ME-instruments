@@ -15,7 +15,8 @@ import {
   Plus,
   Server,
   Zap,
-  CheckCircle
+  CheckCircle,
+  Clock
 } from 'lucide-react';
 
 interface ProcessFlowProps {
@@ -90,6 +91,18 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <h4 className="unified-tech-item-title">«Образец на входе — библиотека на выходе»</h4>
                   <p className="unified-tech-item-desc">
                     Система автоматизирует весь процесс от библиотеки до гибридизационного захвата. Пользователю достаточно загрузить образец и картриджи с премиксованными реагентами. Весь процесс проходит внутри закрытой системы, что сводит к минимуму риск контаминации и ошибки оператора.
+                  </p>
+                </div>
+              </div>
+
+              <div className="unified-tech-item">
+                <div className="unified-tech-icon-wrapper">
+                  <Clock className="w-5 h-5 text-[#0066cc]" />
+                </div>
+                <div className="unified-tech-item-content">
+                  <h4 className="unified-tech-item-title">Библиотека за 8 часов</h4>
+                  <p className="unified-tech-item-desc">
+                    Уникальная картриджная технология и минимизация работы оператора позволяет подготовить гибридизационную библиотеку за 8 часов, что в сочетании со скоростью работы секвенатора UniSeq100 от 7 часов дает возможность получения результатов секвенирования уже на следующий день.
                   </p>
                 </div>
               </div>
