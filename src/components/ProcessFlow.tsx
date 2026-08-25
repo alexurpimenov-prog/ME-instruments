@@ -82,6 +82,18 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 </div>
               </div>
 
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '1.5rem 0 2rem 0' }}>
+                <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+                  <ImageSlot
+                    src="images/UNIPre-1_3.png"
+                    alt="UNIPre-1 схема работы"
+                    overrideSrc={imageOverrides["images/UNIPre-1_3.png"]}
+                    onImageUploaded={onImageUploaded}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+
               <div className="unified-tech-item">
                 <div className="unified-tech-icon-wrapper">
                   <Settings className="w-5 h-5 text-[#0066cc]" />
@@ -106,6 +118,18 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                 </div>
               </div>
 
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '1.5rem 0 2rem 0' }}>
+                <div className="image-placeholder-large" style={{ width: '100%', maxWidth: '500px' }}>
+                  <ImageSlot
+                    src="images/UNIPre-1_2.png"
+                    alt="UNIPre-1 масштабируемость"
+                    overrideSrc={imageOverrides["images/UNIPre-1_2.png"]}
+                    onImageUploaded={onImageUploaded}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+
               <div className="unified-tech-item">
                 <div className="unified-tech-icon-wrapper">
                   <ShieldAlert className="w-5 h-5 text-[#0066cc]" />
@@ -126,44 +150,6 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <h4 className="unified-tech-item-title">Экономия ресурсов и пространства</h4>
                   <p className="unified-tech-item-desc">
                     Картриджи с реагентами поставляются в готовом к работе виде, исключая этап трудоемкого ручного дозирования. Минимальное потребление расходных материалов и компактные размеры делают UNIPre-1 идеальным выбором для лабораторий с ограниченным пространством или бюджетом, где важно качество без лишних затрат.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="unified-tech-card" style={{ boxShadow: 'none', padding: '12px 0' }}>
-            <div className="unified-tech-header">
-              <div className="unified-tech-badge">
-                <Thermometer className="w-4 h-4 text-[#0066cc]" />
-                <span>Термоконтроль и термостабилизация</span>
-              </div>
-              <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-                Встроенные температурные и ПЦР-модули
-              </h3>
-            </div>
-
-            <div className="unified-tech-list" style={{ marginTop: '24px' }}>
-              <div className="unified-tech-item">
-                <div className="unified-tech-icon-wrapper">
-                  <Flame className="w-5 h-5 text-[#0066cc]" />
-                </div>
-                <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">Встроенный ПЦР-модуль</h4>
-                  <p className="unified-tech-item-desc">
-                    Робот сам проводит температурные циклы (амплификацию) библиотек. Крышка блока открывается и закрывается автоматически по команде программы. Высокая скорость нагрева и охлаждения (не менее 1.3 °C в секунду) существенно экономит общее время анализа, а ювелирная точность (стабильность температуры ±0.1 °C) гарантирует идеальную повторяемость результатов.
-                  </p>
-                </div>
-              </div>
-
-              <div className="unified-tech-item">
-                <div className="unified-tech-icon-wrapper">
-                  <Snowflake className="w-5 h-5 text-[#0066cc]" />
-                </div>
-                <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">Термостатический модуль (Охлаждающий стол)</h4>
-                  <p className="unified-tech-item-desc">
-                    Отвечает за бережное хранение капризных ферментов и мастер-миксов прямо в рабочей зоне робота. Модуль работает в диапазоне от 4 до 75 °C, удерживая стабильные +4 °C, чтобы дорогие реагенты не деградировали во время многочасового процесса раскапывания.
                   </p>
                 </div>
               </div>
