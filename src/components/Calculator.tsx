@@ -115,7 +115,7 @@ export default function Calculator() {
         </div>
         
         <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '24px', lineHeight: '1.5', margin: '0 0 24px 0' }}>
-          Рассчитайте оптимальное количество образцов на один запуск с учётом параметов панели, секвенирования и ожидаемой доли ПЦР-дубликатов и On-Target.
+          Рассчитайте оптимальное количество образцов на один запуск с учётом параметров панели, секвенирования и ожидаемой доли ПЦР-дубликатов и On-Target.
         </p>
 
         {warningMessage && (
@@ -305,7 +305,6 @@ export default function Calculator() {
               </div>
             </div>
 
-            {/* Блок On-Target: выпадающий список прямо над полем ввода */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: '#475569' }}>
                 On-Target (%)
@@ -379,90 +378,6 @@ export default function Calculator() {
             <span style={{ fontSize: '15px', fontWeight: '600', color: '#334155' }}>
               образцов за один запуск
             </span>
-            <div style={{ 
-              marginTop: '24px', 
-              paddingTop: '16px', 
-              borderTop: '1px solid #e2e8f0', 
-              width: '100%', 
-              textAlign: 'left', 
-              fontSize: '11px', 
-              color: '#64748b', 
-              lineHeight: '1.6'
-            }}>
-              <strong style={{ color: '#475569', display: 'block', marginBottom: '8px' }}>Формула расчёта:</strong>
-              
-              {/* Контейнер с горизонтальным скроллом */}
-              <div style={{
-                overflowX: 'auto',
-                WebkitOverflowScrolling: 'touch',
-                padding: '4px 0',
-                margin: '0 -14px',
-                paddingLeft: '14px',
-                paddingRight: '14px'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  padding: '12px 14px',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '12px',
-                  color: '#1e293b',
-                  minWidth: 'fit-content',
-                  whiteSpace: 'nowrap'
-                }}>
-                  <span style={{ fontWeight: '500' }}>Количество образцов</span>
-                  <span style={{ fontWeight: '600' }}>=</span>
-                  <div style={{
-                    display: 'inline-flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    verticalAlign: 'middle'
-                  }}>
-                    {/* Числитель */}
-                    <div style={{
-                      borderBottom: '1.5px solid #334155',
-                      paddingBottom: '5px',
-                      marginBottom: '4px',
-                      textAlign: 'center',
-                      whiteSpace: 'nowrap',
-                      fontWeight: '500',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px'
-                    }}>
-                      <span>Чтения ячейки</span>
-                      <span>×</span>
-                      <span>(1 − </span>
-                      <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
-                        <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1' }}>Дубликаты</span>
-                        <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
-                      </span>
-                      <span>)</span>
-                      <span>×</span>
-                      <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
-                        <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1', fontStyle: 'italic', fontFamily: 'serif' }}>OnTarget</span>
-                        <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
-                      </span>
-                      <span>×</span>
-                      <span>Эффективная длина чтения</span>
-                    </div>
-                    {/* Знаменатель */}
-                    <div style={{
-                      textAlign: 'center',
-                      whiteSpace: 'nowrap',
-                      fontWeight: '500',
-                      paddingTop: '2px'
-                    }}>
-                      Размер панели <span style={{ fontStyle: 'italic', fontFamily: 'serif' }}>(bp)</span> × Глубина покрытия
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
