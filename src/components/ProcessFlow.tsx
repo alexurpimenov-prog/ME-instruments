@@ -357,7 +357,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
               <span>Биоинформатика</span>
             </div>
             <h3 className="unified-tech-title" style={{ fontSize: '1.4rem', marginTop: '8px' }}>
-              Лёгкая биоинформатика у нас на компьютере
+              Лёгкая биоинформатика у вас на компьютере
             </h3>
           </div>
 
