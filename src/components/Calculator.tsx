@@ -387,67 +387,78 @@ export default function Calculator() {
               textAlign: 'left', 
               fontSize: '11px', 
               color: '#64748b', 
-              lineHeight: '1.6',
-              overflowX: 'auto'
+              lineHeight: '1.6'
             }}>
               <strong style={{ color: '#475569', display: 'block', marginBottom: '8px' }}>Формула расчёта:</strong>
+              
+              {/* Контейнер с горизонтальным скроллом */}
               <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                padding: '12px 14px',
-                backgroundColor: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '8px',
-                fontSize: '12px',
-                color: '#1e293b',
-                minWidth: 'fit-content'
+                overflowX: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                padding: '4px 0',
+                margin: '0 -14px',
+                paddingLeft: '14px',
+                paddingRight: '14px'
               }}>
-                <span style={{ fontWeight: '500' }}>Количество образцов</span>
-                <span style={{ fontWeight: '600' }}>=</span>
                 <div style={{
-                  display: 'inline-flex',
-                  flexDirection: 'column',
+                  display: 'flex',
                   alignItems: 'center',
-                  verticalAlign: 'middle'
+                  justifyContent: 'center',
+                  gap: '8px',
+                  padding: '12px 14px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '8px',
+                  fontSize: '12px',
+                  color: '#1e293b',
+                  minWidth: 'fit-content',
+                  whiteSpace: 'nowrap'
                 }}>
-                  {/* Числитель */}
+                  <span style={{ fontWeight: '500' }}>Количество образцов</span>
+                  <span style={{ fontWeight: '600' }}>=</span>
                   <div style={{
-                    borderBottom: '1.5px solid #334155',
-                    paddingBottom: '5px',
-                    marginBottom: '4px',
-                    textAlign: 'center',
-                    whiteSpace: 'nowrap',
-                    fontWeight: '500',
-                    display: 'flex',
+                    display: 'inline-flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
-                    gap: '4px'
+                    verticalAlign: 'middle'
                   }}>
-                    <span>Чтения ячейки</span>
-                    <span>×</span>
-                    <span>(1 − </span>
-                    <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
-                      <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1' }}>Дубликаты</span>
-                      <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
-                    </span>
-                    <span>)</span>
-                    <span>×</span>
-                    <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
-                      <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1', fontStyle: 'italic', fontFamily: 'serif' }}>OnTarget</span>
-                      <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
-                    </span>
-                    <span>×</span>
-                    <span>Эффективная длина чтения</span>
-                  </div>
-                  {/* Знаменатель */}
-                  <div style={{
-                    textAlign: 'center',
-                    whiteSpace: 'nowrap',
-                    fontWeight: '500',
-                    paddingTop: '2px'
-                  }}>
-                    Размер панели <span style={{ fontStyle: 'italic', fontFamily: 'serif' }}>(bp)</span> × Глубина покрытия
+                    {/* Числитель */}
+                    <div style={{
+                      borderBottom: '1.5px solid #334155',
+                      paddingBottom: '5px',
+                      marginBottom: '4px',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      fontWeight: '500',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <span>Чтения ячейки</span>
+                      <span>×</span>
+                      <span>(1 − </span>
+                      <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
+                        <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1' }}>Дубликаты</span>
+                        <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
+                      </span>
+                      <span>)</span>
+                      <span>×</span>
+                      <span style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', verticalAlign: 'middle', margin: '0 2px', fontSize: '11px' }}>
+                        <span style={{ borderBottom: '1px solid #334155', paddingBottom: '1px', lineHeight: '1.1', fontStyle: 'italic', fontFamily: 'serif' }}>OnTarget</span>
+                        <span style={{ lineHeight: '1.1', paddingTop: '1px' }}>100</span>
+                      </span>
+                      <span>×</span>
+                      <span>Эффективная длина чтения</span>
+                    </div>
+                    {/* Знаменатель */}
+                    <div style={{
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      fontWeight: '500',
+                      paddingTop: '2px'
+                    }}>
+                      Размер панели <span style={{ fontStyle: 'italic', fontFamily: 'serif' }}>(bp)</span> × Глубина покрытия
+                    </div>
                   </div>
                 </div>
               </div>
