@@ -217,7 +217,7 @@ export const ProcessFlow: React.FC<ProcessFlowProps> = ({
                   <Cpu className="w-5 h-5 text-[#0066cc]" />
                 </div>
                 <div className="unified-tech-item-content">
-                  <h4 className="unified-tech-item-title">«Образец на входе — продукт на выходе»</h4>
+                  <h4 className="unified-tech-item-title">«Образец на входе — библиотека на выходе»</h4>
                   <p className="unified-tech-item-desc">
                     Полная автоматизация всего конвейера NGS — от экстракции образца до пре-подготовки библиотек, гибридизационного захвата и контроля качества без участия человека.
                   </p>
