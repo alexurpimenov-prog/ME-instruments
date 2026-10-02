@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="contact-btn contact-btn-primary"
             >
               <Globe className="w-4 h-4" />
-              <span>new.bioline.ru</span>
+              <span>bioline.ru</span>
             </a>
           </div>
 
