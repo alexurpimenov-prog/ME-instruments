@@ -80,7 +80,7 @@ export default function Calculator() {
   };
 
   useEffect(() => {
-    const reads = sequencer === 'uniseq100' ? 10000000 : 160000000;
+    const reads = sequencer === 'uniseq100' ? 10000000 : 80000000;
     const effectiveReadLength = getReadLength(readType);
 
     if (panelSize > 0 && depth > 0) {
@@ -203,7 +203,7 @@ export default function Calculator() {
                     boxShadow: sequencer === 'uniseq2000' ? '0 4px 6px -1px rgba(0, 102, 204, 0.2)' : 'none'
                   }}
                 >
-                  UniSeq2000 (160M чтений)
+                  UniSeq2000 (80M чтений)
                 </button>
               </div>
             </div>
